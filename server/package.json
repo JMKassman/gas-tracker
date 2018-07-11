@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "nodemon": "^1.17.5",
     "sqlite3": "^4.0.1"
