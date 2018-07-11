@@ -11,9 +11,9 @@ class App extends Component {
     }
 
     componentDidMount() {
-        this.callApi('/api/hello')
+        this.callApi('/api/data')
             .then(res => this.setState({
-                response: res.message,
+                response: res[0].MILES,
             }))
             .catch(err => console.log(err));
     }
