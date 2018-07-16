@@ -1,13 +1,29 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ReactTable from 'react-table';
+import 'react-table/react-table.css'
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            response: '',
-        }
+            response: [],
+        };
+        this.columns = [
+            {
+                Header: 'Miles',
+                accessor: 'MILES'
+            },
+            {
+                Header: 'Gas',
+                accessor: 'GAS'
+            },
+            {
+                Header: 'Price/Gallon',
+                accessor: 'PRICE_PER_GAL'
+            }
+        ];
     }
 
     componentDidMount() {
@@ -35,6 +51,10 @@ class App extends Component {
                     <h1 className="App-title">Gas Tracker</h1>
                 </header>
                 <InputForm />
+                <ReactTable
+                    data={this.state.response}
+                    columns={this.columns}
+                />
             </div>
         );
     }
