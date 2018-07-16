@@ -13,7 +13,7 @@ class App extends Component {
     componentDidMount() {
         this.getFromApi('/api/data')
             .then(res => this.setState({
-                response: res[0].MILES,
+                response: res,
             }))
             .catch(err => console.log(err));
     }
@@ -48,11 +48,13 @@ class InputForm extends Component {
         this.state = {
             MILES: "0",
             GAS: "0",
-            PRICE_PER_GAL: "0"
+            PRICE_PER_GAL: "0",
+            success: false
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.postToAPI = this.postToAPI.bind(this);
     }
     render() {
         return (
@@ -117,7 +119,20 @@ class InputForm extends Component {
     }
 
     postToAPI(data) {
-        console.log("postToAPI called with data " + JSON.stringify(data));
+        fetch('/api/data', {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => {
+            if (res.ok) {
+                this.setState(Object.assign({}, this.state, {success: true}));
+            }
+            else {
+                alert("Server returned an error: " + res.status);
+            }
+        });
     }
 }
 
