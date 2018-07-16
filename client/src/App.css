@@ -21,3 +21,8 @@
   font-size: large;
 }
 
+.InputForm {
+  display: inline-block;
+  padding: 20px;
+  text-align: justify;
+}
