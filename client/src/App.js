@@ -46,9 +46,9 @@ class InputForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            MILES: "0",
-            GAS: "0",
-            PRICE_PER_GAL: "0",
+            MILES: null,
+            GAS: null,
+            PRICE_PER_GAL: null,
             success: false
         };
 
