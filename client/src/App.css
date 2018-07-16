@@ -26,3 +26,11 @@
   padding: 20px;
   text-align: justify;
 }
+
+.SuccessBanner {
+  text-align: center;
+  background-color: #bfffbf;
+  border: 3px solid #40ff40;
+  border-radius: 10px;
+}
+

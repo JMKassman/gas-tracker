@@ -46,9 +46,9 @@ class InputForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            MILES: null,
-            GAS: null,
-            PRICE_PER_GAL: null,
+            MILES: "",
+            GAS: "",
+            PRICE_PER_GAL: "",
             success: false
         };
 
@@ -59,6 +59,7 @@ class InputForm extends Component {
     render() {
         return (
             <div className="InputForm">
+                <SuccessBanner show={this.state.success} />
                 <form onSubmit={this.handleFormSubmit}>
                     <label>
                         Miles:
@@ -128,12 +129,27 @@ class InputForm extends Component {
         }).then(res => {
             if (res.ok) {
                 this.setState(Object.assign({}, this.state, {success: true}));
+                setTimeout(() => {
+                    this.setState(Object.assign({}, this.state, {success: false}));
+                }, 10000)
             }
             else {
                 alert("Server returned an error: " + res.status);
             }
         });
     }
+}
+
+function SuccessBanner(props) {
+    if(!props.show) {
+        return null;
+    }
+
+    return (
+        <div className="SuccessBanner">
+            <h4 className="SuccessText">Success</h4>
+        </div>
+    )
 }
 
 export default App;
