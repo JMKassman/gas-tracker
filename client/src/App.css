@@ -34,3 +34,9 @@
   border-radius: 10px;
 }
 
+#attribution {
+  padding: 20px;
+  margin: auto;
+  text-align: center;
+  font-size: .75em;
+}
