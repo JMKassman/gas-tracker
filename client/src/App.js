@@ -51,6 +51,7 @@ class App extends Component {
                     <h1 className="App-title">Gas Tracker</h1>
                 </header>
                 <InputForm />
+                <Statistics data={this.state.response} />
                 <ReactTable
                     data={this.state.response}
                     columns={this.columns}
@@ -171,6 +172,68 @@ function SuccessBanner(props) {
             <h4 className="SuccessText">Success</h4>
         </div>
     )
+}
+
+function Statistics(props) {
+    let totalMiles = 0;
+    let totalGas = 0;
+    let totalCost = 0;
+    let averageMiles;
+    let averageGas;
+    let averageMPG;
+    let averageCost;
+
+    const data = props.data;
+
+    if (data.length === 0) return null;
+
+    data.forEach(val => {
+        totalMiles += val.MILES;
+        totalGas += val.GAS;
+        totalCost += val.PRICE_PER_GAL * val.GAS;
+    });
+
+
+    averageMiles = totalMiles / data.length;
+    averageGas = totalGas / data.length;
+    averageMPG = totalMiles / totalGas;
+    averageCost = totalCost / data.length;
+
+
+    return (
+        <div className="statistics">
+            <table id="t01">
+                <tr>
+                    <th>Total Miles:</th>
+                    <td>{totalMiles.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <th>Total Gas:</th>
+                    <td>{totalGas.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <th>Total Cost:</th>
+                    <td>${totalCost.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <th>Average Miles:</th>
+                    <td>{averageMiles.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <th>Average Gas:</th>
+                    <td>{averageGas.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <th>Average MPG:</th>
+                    <td>{averageMPG.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <th>Average Cost:</th>
+                    <td>${averageCost.toFixed(2)}</td>
+                </tr>
+            </table>
+        </div>
+    );
 }
 
 export default App;
