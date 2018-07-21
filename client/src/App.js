@@ -28,9 +28,6 @@ class App extends Component {
 
     componentDidMount() {
         this.getFromApi('/api/data')
-            .then(res => this.setState({
-                response: res,
-            }))
             .catch(err => console.log(err));
     }
 
@@ -40,7 +37,7 @@ class App extends Component {
 
         if (response.status !== 200) throw Error(body.message);
 
-        return body;
+        this.setState({response: body});
     };
 
     render() {
@@ -50,13 +47,17 @@ class App extends Component {
                     <img src={logo} className="App-logo" alt="logo"/>
                     <h1 className="App-title">Gas Tracker</h1>
                 </header>
-                <InputForm />
-                <Statistics data={this.state.response} />
+                <InputForm getNewData={this.getFromApi}/>
+                <Statistics data={this.state.response}/>
                 <ReactTable
                     data={this.state.response}
                     columns={this.columns}
                 />
-                <div id="attribution">Icons made by <a href="https://www.flaticon.com/authors/google" title="Google">Google</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank" rel="noopener noreferrer">CC 3.0 BY</a></div>
+                <div id="attribution">Icons made by <a href="https://www.flaticon.com/authors/google"
+                                                       title="Google">Google</a> from <a
+                    href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a
+                    href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank"
+                    rel="noopener noreferrer">CC 3.0 BY</a></div>
             </div>
         );
     }
@@ -78,31 +79,33 @@ class InputForm extends Component {
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.postToAPI = this.postToAPI.bind(this);
     }
+
     render() {
         return (
             <div className="InputForm">
-                <SuccessBanner show={this.state.success} />
+                <SuccessBanner show={this.state.success}/>
                 <form onSubmit={this.handleFormSubmit}>
                     <label>
                         Miles:
-                        <br />
-                        <input type="text" name="miles" value={this.state.MILES} onChange={this.handleChange} />
+                        <br/>
+                        <input type="text" name="miles" value={this.state.MILES} onChange={this.handleChange}/>
                     </label>
-                    <br />
+                    <br/>
                     <label>
                         Gallons of Gas:
-                        <br />
-                        <input type="text" name="gas" value={this.state.GAS} onChange={this.handleChange} />
+                        <br/>
+                        <input type="text" name="gas" value={this.state.GAS} onChange={this.handleChange}/>
                     </label>
-                    <br />
+                    <br/>
                     <label>
                         Price per Gallon:
-                        <br />
-                        <input type="text" name="price_per_gal" value={this.state.PRICE_PER_GAL} onChange={this.handleChange} />
+                        <br/>
+                        <input type="text" name="price_per_gal" value={this.state.PRICE_PER_GAL}
+                               onChange={this.handleChange}/>
                     </label>
-                    <br />
-                    <br />
-                    <input type="submit" value="Submit" />
+                    <br/>
+                    <br/>
+                    <input type="submit" value="Submit"/>
                 </form>
             </div>
         )
@@ -119,6 +122,15 @@ class InputForm extends Component {
         }
         else {
             this.postToAPI(data);
+            this.setState({
+                ...this.state,
+                MILES: "",
+                GAS: "",
+                PRICE_PER_GAL: ""
+            });
+            setTimeout(() => {
+                this.props.getNewData('/api/data');
+            }, 500);
         }
         event.preventDefault();
     }
@@ -163,7 +175,7 @@ class InputForm extends Component {
 }
 
 function SuccessBanner(props) {
-    if(!props.show) {
+    if (!props.show) {
         return null;
     }
 
@@ -203,34 +215,36 @@ function Statistics(props) {
     return (
         <div className="statistics">
             <table id="t01">
-                <tr>
-                    <th>Total Miles:</th>
-                    <td>{totalMiles.toFixed(2)}</td>
-                </tr>
-                <tr>
-                    <th>Total Gas:</th>
-                    <td>{totalGas.toFixed(2)}</td>
-                </tr>
-                <tr>
-                    <th>Total Cost:</th>
-                    <td>${totalCost.toFixed(2)}</td>
-                </tr>
-                <tr>
-                    <th>Average Miles:</th>
-                    <td>{averageMiles.toFixed(2)}</td>
-                </tr>
-                <tr>
-                    <th>Average Gas:</th>
-                    <td>{averageGas.toFixed(2)}</td>
-                </tr>
-                <tr>
-                    <th>Average MPG:</th>
-                    <td>{averageMPG.toFixed(2)}</td>
-                </tr>
-                <tr>
-                    <th>Average Cost:</th>
-                    <td>${averageCost.toFixed(2)}</td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <th>Total Miles:</th>
+                        <td>{totalMiles.toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                        <th>Total Gas:</th>
+                        <td>{totalGas.toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                        <th>Total Cost:</th>
+                        <td>${totalCost.toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                        <th>Average Miles:</th>
+                        <td>{averageMiles.toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                        <th>Average Gas:</th>
+                        <td>{averageGas.toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                        <th>Average MPG:</th>
+                        <td>{averageMPG.toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                        <th>Average Cost:</th>
+                        <td>${averageCost.toFixed(2)}</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     );
