@@ -165,7 +165,7 @@ class InputForm extends Component {
                 this.setState(Object.assign({}, this.state, {success: true}));
                 setTimeout(() => {
                     this.setState(Object.assign({}, this.state, {success: false}));
-                }, 10000)
+                }, 5000)
             }
             else {
                 alert("Server returned an error: " + res.status);
