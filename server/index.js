@@ -6,13 +6,14 @@ app.use(express.json());
 let db = new sqlite3.Database('./db/main.db');
 
 app.get('/api/data', (req, res) => {
-    db.all('SELECT * FROM main', (err, rows) => {
+    db.all('SELECT * FROM data', (err, rows) => {
         res.json(rows);
     });
 });
 
 app.post('/api/data', (req, res) => {
     console.log(req.body);
+    let EMAIL = "test@example.com";
     let MILES = req.body.MILES;
     let GAS = req.body.GAS;
     let PRICE_PER_GAL = req.body.PRICE_PER_GAL;
@@ -20,7 +21,7 @@ app.post('/api/data', (req, res) => {
         res.sendStatus(400);
     }
     else {
-        db.run("INSERT INTO main VALUES(?, ?, ?)", MILES, GAS, PRICE_PER_GAL, (err) => {
+        db.run("INSERT INTO data VALUES((SELECT USER_ID FROM users WHERE EMAIL=?), ?, ?, ?)", EMAIL, MILES, GAS, PRICE_PER_GAL, (err) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(500);
