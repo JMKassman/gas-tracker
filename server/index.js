@@ -44,10 +44,10 @@ app.use(cors(corsOptions))
 
 app.use(passport.initialize())
 
-app.use("/users", userRouter)
-app.use("/data", dataRouter)
+app.use("/api/users", userRouter)
+app.use("/api/data", dataRouter)
 
-app.get("/", function(req, res) {
+app.get("/api", function(req, res) {
     res.send({status: "success"})
 })
 
