@@ -1,3 +1,4 @@
+import Button from 'react-bootstrap/esm/Button'
 import Table from 'react-bootstrap/Table'
 
 function DataTable(props) {
@@ -36,29 +37,34 @@ function DataTable(props) {
     })
     tableRows.push()
     return (
-        <Table striped bordered hover responsive="sm">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Miles</th>
-                    <th>Gallons</th>
-                    <th>Price</th>
-                    <th>MPG</th>
-                </tr>
-            </thead>
-            <tbody>
-                {tableRows}
-            </tbody>
-            <tfoot>
-                <tr key={averages._id}>
-                    <td><strong>{averages.time}</strong></td>
-                    <td><strong>{averages.miles}</strong></td>
-                    <td><strong>{averages.gallons}</strong></td>
-                    <td><strong>{averages.total_price}</strong></td>
-                    <td><strong>{averages.mpg}</strong></td>
-                </tr>
-            </tfoot>
-        </Table>
+        <div>
+            <div className='d-flex justify-content-end mb-3'>
+                <Button onClick={() => props.refreshHandler()}>Refresh Data</Button>
+            </div>
+            <Table striped bordered hover responsive="sm">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Miles</th>
+                        <th>Gallons</th>
+                        <th>Price</th>
+                        <th>MPG</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {tableRows}
+                </tbody>
+                <tfoot>
+                    <tr key={averages._id}>
+                        <td><strong>{averages.time}</strong></td>
+                        <td><strong>{averages.miles}</strong></td>
+                        <td><strong>{averages.gallons}</strong></td>
+                        <td><strong>{averages.total_price}</strong></td>
+                        <td><strong>{averages.mpg}</strong></td>
+                    </tr>
+                </tfoot>
+            </Table>
+        </div>
     )
 }
 

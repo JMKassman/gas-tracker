@@ -79,7 +79,7 @@ function PostAuth() {
                         <NewRefill refreshHandler={refreshHandler} setKey={setKey} />
                     </Tab>
                     <Tab eventKey="dataTable" title="View Data">
-                        <DataTable data={userContext.userDetails.refills} />
+                        <DataTable data={userContext.userDetails.refills} refreshHandler={refreshHandler}/>
                     </Tab>
                 </Tabs>
             </div>
