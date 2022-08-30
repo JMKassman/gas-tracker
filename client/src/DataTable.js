@@ -14,9 +14,9 @@ function DataTable(props) {
     )
     const numRows = props.data.length
     const averages = {
-        gallons: (totals.gallons / numRows), 
-        miles: (totals.miles / numRows), 
-        total_price: (totals.total_price / numRows),
+        gallons: (totals.gallons / numRows).toFixed(3), 
+        miles: (totals.miles / numRows).toFixed(1), 
+        total_price: (totals.total_price / numRows).toFixed(2),
         time: "Average",
         _id: "Average",
     }
