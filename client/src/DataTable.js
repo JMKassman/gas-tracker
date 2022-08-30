@@ -35,6 +35,7 @@ function DataTable(props) {
         </tr>
         )
     })
+    tableRows.reverse()
     tableRows.push()
     return (
         <div>
