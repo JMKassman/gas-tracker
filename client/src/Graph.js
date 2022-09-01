@@ -3,8 +3,12 @@ import { useState } from "react"
 import ButtonGroup from "react-bootstrap/esm/ButtonGroup"
 import Button from "react-bootstrap/esm/Button"
 
+import Plotly from "plotly.js-finance-dist"
+import createPlotlyComponent from "react-plotly.js/factory"
+
 import prepData from "./utils/PrepData"
-import Plot from "react-plotly.js"
+
+const Plot = createPlotlyComponent(Plotly)
 
 function transposeData(data) {
     const transposedData = {}
