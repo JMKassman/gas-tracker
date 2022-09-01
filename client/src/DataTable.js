@@ -1,33 +1,14 @@
 import Button from 'react-bootstrap/esm/Button'
 import Table from 'react-bootstrap/Table'
 
+import prepData from './utils/PrepData'
+
 function DataTable(props) {
-    const totals = props.data.reduce(
-        (prev, curr) => {
-            return {
-                gallons: prev.gallons + curr.gallons,
-                miles: prev.miles + curr.miles, 
-                total_price: prev.total_price + curr.total_price,
-            }
-        }, 
-        {gallons: 0, miles: 0, total_price: 0}
-    )
-    const numRows = props.data.length
-    const averages = {
-        gallons: (totals.gallons / numRows).toFixed(3), 
-        miles: (totals.miles / numRows).toFixed(1), 
-        total_price: (totals.total_price / numRows).toFixed(2),
-        time: "Average",
-        _id: "Average",
-    }
-    averages.mpg = (averages.miles / averages.gallons).toFixed(2)
-    const data_with_mpg = props.data.map(row => {
-        return {...row, mpg: (row.miles / row.gallons).toFixed(2), time: (new Date(row.time)).toLocaleString()}
-    })
+    const {data_with_mpg, averages} = prepData(props.data)
     const tableRows = data_with_mpg.map(row => {
         return (
         <tr key={row._id}>
-            <td>{row.time}</td>
+            <td>{(new Date(row.time)).toLocaleString()}</td>
             <td>{row.miles}</td>
             <td>{row.gallons}</td>
             <td>{row.total_price}</td>

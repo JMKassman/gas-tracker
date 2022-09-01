@@ -9,6 +9,7 @@ import { UserContext } from "./context/UserContext"
 import Loader from "./loader"
 import NewRefill from "./NewRefill"
 import DataTable from "./DataTable"
+import Graph from "./Graph";
 
 function PostAuth() {
     const [userContext, setUserContext] = useContext(UserContext)
@@ -80,6 +81,9 @@ function PostAuth() {
                     </Tab>
                     <Tab eventKey="dataTable" title="View Data">
                         <DataTable data={userContext.userDetails.refills} refreshHandler={refreshHandler}/>
+                    </Tab>
+                    <Tab eventKey="graph" title="Graph Data">
+                        <Graph data={userContext.userDetails.refills}/>
                     </Tab>
                 </Tabs>
             </div>
