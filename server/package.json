@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "start": "npx nodemon index.js",
     "start_prod": "node index.js"
@@ -23,5 +22,6 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^7.1.2"
-  }
+  },
+  "packageManager": "yarn@3.5.1"
 }
