@@ -30,17 +30,13 @@ router.post("/signup", (req, res, next) => {
                 user.refreshToken.push({
                     refreshToken
                 })
-                user.save((err, user) => {
-                    if (err) {
-                        res.status(500).send(err)
-                    } else {
-                        res.cookie("refreshToken", refreshToken, COOKIE_OPTIONS)
-                        res.send({
-                            success: true,
-                            token
-                        })
-                    }
-                })
+                user.save().then(user => {
+                    res.cookie("refreshToken", refreshToken, COOKIE_OPTIONS)
+                    res.send({
+                        success: true,
+                        token
+                    })
+                }).catch(err => { res.status(500).send(err) })
             }
         }
     )
@@ -56,21 +52,19 @@ router.post("/login", passport.authenticate("local", {
         _id: req.user._id
     })
     User.findById(req.user._id).then(user => {
-            user.refreshToken.push({
-                refreshToken
+        user.refreshToken.push({
+            refreshToken
+        })
+        user.save().then((user) => {
+            res.cookie("refreshToken", refreshToken, COOKIE_OPTIONS)
+            res.send({
+                success: true,
+                token
             })
-            user.save((err, user) => {
-                if (err) {
-                    res.status(500).send(err)
-                } else {
-                    res.cookie("refreshToken", refreshToken, COOKIE_OPTIONS)
-                    res.send({
-                        success: true,
-                        token
-                    })
-                }
-            })
-        },
+        }).catch((err) => {
+            res.status(500).send(err)
+        })
+    },
         err => next(err)
     )
 })
@@ -89,38 +83,36 @@ router.post("/refreshToken", (req, res, next) => {
             User.findOne({
                 _id: userId
             }).then(user => {
-                    if (user) {
-                        const tokenIndex = user.refreshToken.findIndex(
-                            item => item.refreshToken === refreshToken
-                        )
-                        if (tokenIndex === -1) {
-                            res.sendStatus(401)
-                        } else {
-                            const token = getToken({
-                                _id: userId
-                            })
-                            const newRefreshToken = getRefreshToken({
-                                _id: userId
-                            })
-                            user.refreshToken[tokenIndex] = {
-                                refreshToken: newRefreshToken
-                            }
-                            user.save((err, user) => {
-                                if (err) {
-                                    res.status(500).send(err)
-                                } else {
-                                    res.cookie("refreshToken", newRefreshToken, COOKIE_OPTIONS)
-                                    res.send({
-                                        success: true,
-                                        token
-                                    })
-                                }
-                            })
-                        }
-                    } else {
+                if (user) {
+                    const tokenIndex = user.refreshToken.findIndex(
+                        item => item.refreshToken === refreshToken
+                    )
+                    if (tokenIndex === -1) {
                         res.sendStatus(401)
+                    } else {
+                        const token = getToken({
+                            _id: userId
+                        })
+                        const newRefreshToken = getRefreshToken({
+                            _id: userId
+                        })
+                        user.refreshToken[tokenIndex] = {
+                            refreshToken: newRefreshToken
+                        }
+                        user.save().then((user) => {
+                            res.cookie("refreshToken", newRefreshToken, COOKIE_OPTIONS)
+                            res.send({
+                                success: true,
+                                token
+                            })
+                        }).catch((err) => {
+                            res.status(500).send(err)
+                        })
                     }
-                },
+                } else {
+                    res.sendStatus(401)
+                }
+            },
                 err => next(err)
             )
         } catch (err) {
@@ -145,18 +137,16 @@ router.get("/logout", verifyUser, (req, res, next) => {
             )
 
             if (tokenIndex !== -1) {
-                user.refreshToken.id(user.refreshToken[tokenIndex]._id).remove()
+                user.refreshToken.id(user.refreshToken[tokenIndex]._id).deleteOne()
             }
 
-            user.save((err, user) => {
-                if (err) {
-                    res.status(500).send(err)
-                } else {
-                    res.clearCookie("refreshToken", COOKIE_OPTIONS)
-                    res.send({
-                        success: true
-                    })
-                }
+            user.save().then((user) => {
+                res.clearCookie("refreshToken", COOKIE_OPTIONS)
+                res.send({
+                    success: true
+                })
+            }).catch((err) => {
+                res.status(500).send(err)
             })
         },
         err => next(err)

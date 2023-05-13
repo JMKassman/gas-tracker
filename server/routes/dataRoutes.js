@@ -20,14 +20,8 @@ router.post("/newRefill", verifyUser, (req, res, next) => {
     User.findById(req.user._id).then(
         user => {
             user.refills.push(newRefill)
-            user.save((err, user) => {
-                if (err) {
-                    res.status(500).send(err)
-                } else {
-                    res.send({success: true})
-                }
-            })
-        }, 
+            user.save().then(user => { res.send({ success: true }) }).catch(err => { res.status(500).send(err) })
+        },
         err => next(err)
     )
 })

@@ -29,7 +29,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
-            ["@testing-library/react", "virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:13.4.0"],\
+            ["@testing-library/react", "virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:14.0.0"],\
             ["@testing-library/user-event", "virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:14.4.3"],\
             ["bootstrap", "virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:5.2.3"],\
             ["plotly.js-finance-dist", "npm:2.23.0"],\
@@ -4247,10 +4247,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@testing-library/dom", [\
-        ["npm:8.20.0", {\
-          "packageLocation": "./.yarn/cache/@testing-library-dom-npm-8.20.0-afe79da119-1e599129a2.zip/node_modules/@testing-library/dom/",\
+        ["npm:9.3.0", {\
+          "packageLocation": "./.yarn/cache/@testing-library-dom-npm-9.3.0-60726cd56a-790f4da6a8.zip/node_modules/@testing-library/dom/",\
           "packageDependencies": [\
-            ["@testing-library/dom", "npm:8.20.0"],\
+            ["@testing-library/dom", "npm:9.3.0"],\
             ["@babel/code-frame", "npm:7.21.4"],\
             ["@babel/runtime", "npm:7.21.5"],\
             ["@types/aria-query", "npm:5.0.1"],\
@@ -4282,19 +4282,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@testing-library/react", [\
-        ["npm:13.4.0", {\
-          "packageLocation": "./.yarn/cache/@testing-library-react-npm-13.4.0-eaa652c0f5-51ec548c1f.zip/node_modules/@testing-library/react/",\
+        ["npm:14.0.0", {\
+          "packageLocation": "./.yarn/cache/@testing-library-react-npm-14.0.0-84fecd033b-4a54c8f56c.zip/node_modules/@testing-library/react/",\
           "packageDependencies": [\
-            ["@testing-library/react", "npm:13.4.0"]\
+            ["@testing-library/react", "npm:14.0.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:13.4.0", {\
-          "packageLocation": "./.yarn/__virtual__/@testing-library-react-virtual-c8742411a3/0/cache/@testing-library-react-npm-13.4.0-eaa652c0f5-51ec548c1f.zip/node_modules/@testing-library/react/",\
+        ["virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:14.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/@testing-library-react-virtual-264a3aa3ca/0/cache/@testing-library-react-npm-14.0.0-84fecd033b-4a54c8f56c.zip/node_modules/@testing-library/react/",\
           "packageDependencies": [\
-            ["@testing-library/react", "virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:13.4.0"],\
+            ["@testing-library/react", "virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:14.0.0"],\
             ["@babel/runtime", "npm:7.21.5"],\
-            ["@testing-library/dom", "npm:8.20.0"],\
+            ["@testing-library/dom", "npm:9.3.0"],\
             ["@types/react", null],\
             ["@types/react-dom", "npm:18.2.4"],\
             ["react", "npm:18.2.0"],\
@@ -9253,7 +9253,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["gas-tracker-client", "workspace:."],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
-            ["@testing-library/react", "virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:13.4.0"],\
+            ["@testing-library/react", "virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:14.0.0"],\
             ["@testing-library/user-event", "virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:14.4.3"],\
             ["bootstrap", "virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:5.2.3"],\
             ["plotly.js-finance-dist", "npm:2.23.0"],\
