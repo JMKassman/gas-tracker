@@ -38,7 +38,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:18.2.0"],\
             ["react-plotly.js", "virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:2.6.0"],\
             ["react-scripts", "virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:5.0.1"],\
-            ["web-vitals", "npm:3.3.1"]\
+            ["web-vitals", "npm:3.3.1"],\
+            ["workbox-core", "npm:6.5.4"],\
+            ["workbox-expiration", "npm:6.5.4"],\
+            ["workbox-precaching", "npm:6.5.4"],\
+            ["workbox-routing", "npm:6.5.4"],\
+            ["workbox-strategies", "npm:6.5.4"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -9262,7 +9267,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:18.2.0"],\
             ["react-plotly.js", "virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:2.6.0"],\
             ["react-scripts", "virtual:ec817342924582cb6d02dd304b81b1b3e94d10325e5a2c0cc32ab35f63726b91d8c0518a19687126cb7cfb76d24d3d1ea9c8d39af705e60975d89de87278de18#npm:5.0.1"],\
-            ["web-vitals", "npm:3.3.1"]\
+            ["web-vitals", "npm:3.3.1"],\
+            ["workbox-core", "npm:6.5.4"],\
+            ["workbox-expiration", "npm:6.5.4"],\
+            ["workbox-precaching", "npm:6.5.4"],\
+            ["workbox-routing", "npm:6.5.4"],\
+            ["workbox-strategies", "npm:6.5.4"]\
           ],\
           "linkType": "SOFT"\
         }]\
