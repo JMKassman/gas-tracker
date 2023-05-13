@@ -4,16 +4,17 @@ import Table from 'react-bootstrap/Table'
 import prepData from './utils/PrepData'
 
 function DataTable(props) {
-    const {data_with_mpg, averages} = prepData(props.data)
-    const tableRows = data_with_mpg.map(row => {
+    const { data_with_extras, averages } = prepData(props.data)
+    const tableRows = data_with_extras.map(row => {
         return (
-        <tr key={row._id}>
-            <td>{(new Date(row.time)).toLocaleString()}</td>
-            <td>{row.miles}</td>
-            <td>{row.gallons}</td>
-            <td>{row.total_price}</td>
-            <td>{row.mpg}</td>
-        </tr>
+            <tr key={row._id}>
+                <td>{(new Date(row.time)).toLocaleString()}</td>
+                <td>{row.miles}</td>
+                <td>{row.gallons}</td>
+                <td>{row.total_price}</td>
+                <td>{row.mpg}</td>
+                <td>{row.ppg}</td>
+            </tr>
         )
     })
     tableRows.reverse()
@@ -31,6 +32,7 @@ function DataTable(props) {
                         <th>Gallons</th>
                         <th>Price</th>
                         <th>MPG</th>
+                        <th>$/Gal</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,6 +45,7 @@ function DataTable(props) {
                         <td><strong>{averages.gallons}</strong></td>
                         <td><strong>{averages.total_price}</strong></td>
                         <td><strong>{averages.mpg}</strong></td>
+                        <td><strong>{averages.ppg}</strong></td>
                     </tr>
                 </tfoot>
             </Table>
