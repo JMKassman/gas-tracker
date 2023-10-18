@@ -137,7 +137,7 @@ router.get("/logout", verifyUser, (req, res, next) => {
             )
 
             if (tokenIndex !== -1) {
-                user.refreshToken.id(user.refreshToken[tokenIndex]._id).deleteOne()
+                User.findByIdAndDelete(user.refreshToken[tokenIndex]._id)
             }
 
             user.save().then((user) => {
