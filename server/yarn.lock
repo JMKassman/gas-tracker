@@ -5,6 +5,15 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@mongodb-js/saslprep@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@mongodb-js/saslprep@npm:1.1.0"
+  dependencies:
+    sparse-bitfield: ^3.0.3
+  checksum: 1479a43e216734672f8eb1a2a55165b6896841bd00fb5bd645390a24374ef6c29f0f6d19a43618a19b8f1912fcbd2b2cc2210a62361103d1f28dce6852cf31d4
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:*":
   version: 18.0.0
   resolution: "@types/node@npm:18.0.0"
@@ -86,10 +95,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bson@npm:^5.2.0":
-  version: 5.3.0
-  resolution: "bson@npm:5.3.0"
-  checksum: c1e57630fea6b82ad8bc0fb83fd8f16a2620a836ab69f6b9433250cd19704c0c8995681a3bfab9f967eae30512f0c8ee921d42ace4c1781726600c4a367593cf
+"bson@npm:^5.5.0":
+  version: 5.5.0
+  resolution: "bson@npm:5.5.0"
+  checksum: 61afd240dfcaaa07346c3278d42586606b4c09bd8dcf865f6d79e26ee9cf3d6b140b8347257c598f65340e26ba640f96f6a3b9b6ff2baef963a1d321fc4c281e
   languageName: node
   linkType: hard
 
@@ -216,10 +225,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^16.0.3":
-  version: 16.0.3
-  resolution: "dotenv@npm:16.0.3"
-  checksum: afcf03f373d7a6d62c7e9afea6328e62851d627a4e73f2e12d0a8deae1cd375892004f3021883f8aec85932cd2834b091f568ced92b4774625b321db83b827f8
+"dotenv@npm:^16.3.1":
+  version: 16.3.1
+  resolution: "dotenv@npm:16.3.1"
+  checksum: 15d75e7279018f4bafd0ee9706593dd14455ddb71b3bcba9c52574460b7ccaf67d5cf8b2c08a5af1a9da6db36c956a04a1192b101ee102a3e0cf8817bbcf3dfd
   languageName: node
   linkType: hard
 
@@ -342,10 +351,10 @@ __metadata:
     body-parser: ^1.20.2
     cookie-parser: ^1.4.6
     cors: ^2.8.5
-    dotenv: ^16.0.3
+    dotenv: ^16.3.1
     express: ^4.18.2
-    jsonwebtoken: ^9.0.0
-    mongoose: ^7.1.1
+    jsonwebtoken: ^9.0.2
+    mongoose: ^7.6.3
     passport: ^0.6.0
     passport-jwt: ^4.0.1
     passport-local: ^1.0.0
@@ -442,6 +451,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsonwebtoken@npm:^9.0.2":
+  version: 9.0.2
+  resolution: "jsonwebtoken@npm:9.0.2"
+  dependencies:
+    jws: ^3.2.2
+    lodash.includes: ^4.3.0
+    lodash.isboolean: ^3.0.3
+    lodash.isinteger: ^4.0.4
+    lodash.isnumber: ^3.0.3
+    lodash.isplainobject: ^4.0.6
+    lodash.isstring: ^4.0.1
+    lodash.once: ^4.0.0
+    ms: ^2.1.1
+    semver: ^7.5.4
+  checksum: fc739a6a8b33f1974f9772dca7f8493ca8df4cc31c5a09dcfdb7cff77447dcf22f4236fb2774ef3fe50df0abeb8e1c6f4c41eba82f500a804ab101e2fbc9d61a
+  languageName: node
+  linkType: hard
+
 "jwa@npm:^1.4.1":
   version: 1.4.1
   resolution: "jwa@npm:1.4.1"
@@ -467,6 +494,55 @@ __metadata:
   version: 2.5.1
   resolution: "kareem@npm:2.5.1"
   checksum: b019a960a7b9e44b6ef224ef85e7583d4e969619f53319e571677fbed7e57e01ee8774589726b29741e42790996567d878003c18e674296742dc343bfbf3efb9
+  languageName: node
+  linkType: hard
+
+"lodash.includes@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "lodash.includes@npm:4.3.0"
+  checksum: 71092c130515a67ab3bd928f57f6018434797c94def7f46aafa417771e455ce3a4834889f4267b17887d7f75297dfabd96231bf704fd2b8c5096dc4a913568b6
+  languageName: node
+  linkType: hard
+
+"lodash.isboolean@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "lodash.isboolean@npm:3.0.3"
+  checksum: b70068b4a8b8837912b54052557b21fc4774174e3512ed3c5b94621e5aff5eb6c68089d0a386b7e801d679cd105d2e35417978a5e99071750aa2ed90bffd0250
+  languageName: node
+  linkType: hard
+
+"lodash.isinteger@npm:^4.0.4":
+  version: 4.0.4
+  resolution: "lodash.isinteger@npm:4.0.4"
+  checksum: 6034821b3fc61a2ffc34e7d5644bb50c5fd8f1c0121c554c21ac271911ee0c0502274852845005f8651d51e199ee2e0cfebfe40aaa49c7fe617f603a8a0b1691
+  languageName: node
+  linkType: hard
+
+"lodash.isnumber@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "lodash.isnumber@npm:3.0.3"
+  checksum: 913784275b565346255e6ae6a6e30b760a0da70abc29f3e1f409081585875105138cda4a429ff02577e1bc0a7ae2a90e0a3079a37f3a04c3d6c5aaa532f4cab2
+  languageName: node
+  linkType: hard
+
+"lodash.isplainobject@npm:^4.0.6":
+  version: 4.0.6
+  resolution: "lodash.isplainobject@npm:4.0.6"
+  checksum: 29c6351f281e0d9a1d58f1a4c8f4400924b4c79f18dfc4613624d7d54784df07efaff97c1ff2659f3e085ecf4fff493300adc4837553104cef2634110b0d5337
+  languageName: node
+  linkType: hard
+
+"lodash.isstring@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "lodash.isstring@npm:4.0.1"
+  checksum: eaac87ae9636848af08021083d796e2eea3d02e80082ab8a9955309569cb3a463ce97fd281d7dc119e402b2e7d8c54a23914b15d2fc7fff56461511dc8937ba0
+  languageName: node
+  linkType: hard
+
+"lodash.once@npm:^4.0.0":
+  version: 4.1.1
+  resolution: "lodash.once@npm:4.1.1"
+  checksum: d768fa9f9b4e1dc6453be99b753906f58990e0c45e7b2ca5a3b40a33111e5d17f6edf2f768786e2716af90a8e78f8f91431ab8435f761fef00f9b0c256f6d245
   languageName: node
   linkType: hard
 
@@ -549,44 +625,50 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongodb@npm:5.3.0":
-  version: 5.3.0
-  resolution: "mongodb@npm:5.3.0"
+"mongodb@npm:5.9.0":
+  version: 5.9.0
+  resolution: "mongodb@npm:5.9.0"
   dependencies:
-    bson: ^5.2.0
+    "@mongodb-js/saslprep": ^1.1.0
+    bson: ^5.5.0
     mongodb-connection-string-url: ^2.6.0
-    saslprep: ^1.0.3
     socks: ^2.7.1
   peerDependencies:
-    "@aws-sdk/credential-providers": ^3.201.0
+    "@aws-sdk/credential-providers": ^3.188.0
+    "@mongodb-js/zstd": ^1.0.0
+    kerberos: ^1.0.0 || ^2.0.0
     mongodb-client-encryption: ">=2.3.0 <3"
     snappy: ^7.2.2
   dependenciesMeta:
-    saslprep:
+    "@mongodb-js/saslprep":
       optional: true
   peerDependenciesMeta:
     "@aws-sdk/credential-providers":
+      optional: true
+    "@mongodb-js/zstd":
+      optional: true
+    kerberos:
       optional: true
     mongodb-client-encryption:
       optional: true
     snappy:
       optional: true
-  checksum: da86069555f3f700a0ef338a4676de2254ef64f7700427c0e23ccd5bd9ca9cd5f08651f2eb5083edfdc1e7eed1b40c60041b16e6d4851f353a26d9469d274299
+  checksum: 5fb828d6503b7291c0bcc984ed35bdd0e2f166cd9d637a5ff9e8c2e497ef6260eea5a3f700f2850200cd8108057c858f96e37394ed2953aff3b85fe760bbd777
   languageName: node
   linkType: hard
 
-"mongoose@npm:^7.1.1":
-  version: 7.1.1
-  resolution: "mongoose@npm:7.1.1"
+"mongoose@npm:^7.6.3":
+  version: 7.6.3
+  resolution: "mongoose@npm:7.6.3"
   dependencies:
-    bson: ^5.2.0
+    bson: ^5.5.0
     kareem: 2.5.1
-    mongodb: 5.3.0
+    mongodb: 5.9.0
     mpath: 0.9.0
     mquery: 5.0.0
     ms: 2.1.3
     sift: 16.0.1
-  checksum: bbacd407cda31e7d530ec35321caecfa3178021a92ec90c20d8a7ecf21832db225140dbaf5a1c077e898725f2944b97fe72e5a8bbe78f84012a3faa94e1e4d4b
+  checksum: 16d097d6a40ad788a8b49867a5d256e1ffefb6aab0bb75481d9a95908551b53152e7f1870655befef5433b86a574f07679733f789a2723fca08f1eb66a9a715a
   languageName: node
   linkType: hard
 
@@ -797,15 +879,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"saslprep@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "saslprep@npm:1.0.3"
-  dependencies:
-    sparse-bitfield: ^3.0.3
-  checksum: 4fdc0b70fb5e523f977de405e12cca111f1f10dd68a0cfae0ca52c1a7919a94d1556598ba2d35f447655c3b32879846c77f9274c90806f6673248ae3cea6ee43
-  languageName: node
-  linkType: hard
-
 "scmp@npm:^2.1.0":
   version: 2.1.0
   resolution: "scmp@npm:2.1.0"
@@ -821,6 +894,17 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: d16dbedad53c65b086f79524b9ef766bf38670b2395bdad5c957f824dcc566b624988013564f4812bcace3f9d405355c3635e2007396a39d1bffc71cfec4a2fc
+  languageName: node
+  linkType: hard
+
+"semver@npm:^7.5.4":
+  version: 7.5.4
+  resolution: "semver@npm:7.5.4"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: 12d8ad952fa353b0995bf180cdac205a4068b759a140e5d3c608317098b3575ac2f1e09182206bf2eb26120e1c0ed8fb92c48c592f6099680de56bb071423ca3
   languageName: node
   linkType: hard
 

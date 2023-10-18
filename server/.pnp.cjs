@@ -31,16 +31,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["body-parser", "npm:1.20.2"],\
             ["cookie-parser", "npm:1.4.6"],\
             ["cors", "npm:2.8.5"],\
-            ["dotenv", "npm:16.0.3"],\
+            ["dotenv", "npm:16.3.1"],\
             ["express", "npm:4.18.2"],\
-            ["jsonwebtoken", "npm:9.0.0"],\
-            ["mongoose", "npm:7.1.1"],\
+            ["jsonwebtoken", "npm:9.0.2"],\
+            ["mongoose", "npm:7.6.3"],\
             ["passport", "npm:0.6.0"],\
             ["passport-jwt", "npm:4.0.1"],\
             ["passport-local", "npm:1.0.0"],\
             ["passport-local-mongoose", "npm:8.0.0"]\
           ],\
           "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@mongodb-js/saslprep", [\
+        ["npm:1.1.0", {\
+          "packageLocation": "./.yarn/cache/@mongodb-js-saslprep-npm-1.1.0-3906c025b8-1479a43e21.zip/node_modules/@mongodb-js/saslprep/",\
+          "packageDependencies": [\
+            ["@mongodb-js/saslprep", "npm:1.1.0"],\
+            ["sparse-bitfield", "npm:3.0.3"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@types/node", [\
@@ -133,10 +143,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["bson", [\
-        ["npm:5.3.0", {\
-          "packageLocation": "./.yarn/cache/bson-npm-5.3.0-5ecf204f9b-c1e57630fe.zip/node_modules/bson/",\
+        ["npm:5.5.0", {\
+          "packageLocation": "./.yarn/cache/bson-npm-5.5.0-994b2902b7-61afd240df.zip/node_modules/bson/",\
           "packageDependencies": [\
-            ["bson", "npm:5.3.0"]\
+            ["bson", "npm:5.5.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -306,10 +316,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["dotenv", [\
-        ["npm:16.0.3", {\
-          "packageLocation": "./.yarn/cache/dotenv-npm-16.0.3-4cc29121dc-afcf03f373.zip/node_modules/dotenv/",\
+        ["npm:16.3.1", {\
+          "packageLocation": "./.yarn/cache/dotenv-npm-16.3.1-e6d380a398-15d75e7279.zip/node_modules/dotenv/",\
           "packageDependencies": [\
-            ["dotenv", "npm:16.0.3"]\
+            ["dotenv", "npm:16.3.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -451,10 +461,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["body-parser", "npm:1.20.2"],\
             ["cookie-parser", "npm:1.4.6"],\
             ["cors", "npm:2.8.5"],\
-            ["dotenv", "npm:16.0.3"],\
+            ["dotenv", "npm:16.3.1"],\
             ["express", "npm:4.18.2"],\
-            ["jsonwebtoken", "npm:9.0.0"],\
-            ["mongoose", "npm:7.1.1"],\
+            ["jsonwebtoken", "npm:9.0.2"],\
+            ["mongoose", "npm:7.6.3"],\
             ["passport", "npm:0.6.0"],\
             ["passport-jwt", "npm:4.0.1"],\
             ["passport-local", "npm:1.0.0"],\
@@ -565,6 +575,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["semver", "npm:7.5.1"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:9.0.2", {\
+          "packageLocation": "./.yarn/cache/jsonwebtoken-npm-9.0.2-42c6b14d02-fc739a6a8b.zip/node_modules/jsonwebtoken/",\
+          "packageDependencies": [\
+            ["jsonwebtoken", "npm:9.0.2"],\
+            ["jws", "npm:3.2.2"],\
+            ["lodash.includes", "npm:4.3.0"],\
+            ["lodash.isboolean", "npm:3.0.3"],\
+            ["lodash.isinteger", "npm:4.0.4"],\
+            ["lodash.isnumber", "npm:3.0.3"],\
+            ["lodash.isplainobject", "npm:4.0.6"],\
+            ["lodash.isstring", "npm:4.0.1"],\
+            ["lodash.once", "npm:4.1.1"],\
+            ["ms", "npm:2.1.3"],\
+            ["semver", "npm:7.5.4"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["jwa", [\
@@ -604,6 +631,69 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/lodash-npm-4.17.21-6382451519-eb835a2e51.zip/node_modules/lodash/",\
           "packageDependencies": [\
             ["lodash", "npm:4.17.21"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.includes", [\
+        ["npm:4.3.0", {\
+          "packageLocation": "./.yarn/cache/lodash.includes-npm-4.3.0-3a2f6fa22c-71092c1305.zip/node_modules/lodash.includes/",\
+          "packageDependencies": [\
+            ["lodash.includes", "npm:4.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.isboolean", [\
+        ["npm:3.0.3", {\
+          "packageLocation": "./.yarn/cache/lodash.isboolean-npm-3.0.3-b575b41488-b70068b4a8.zip/node_modules/lodash.isboolean/",\
+          "packageDependencies": [\
+            ["lodash.isboolean", "npm:3.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.isinteger", [\
+        ["npm:4.0.4", {\
+          "packageLocation": "./.yarn/cache/lodash.isinteger-npm-4.0.4-42add9f4e1-6034821b3f.zip/node_modules/lodash.isinteger/",\
+          "packageDependencies": [\
+            ["lodash.isinteger", "npm:4.0.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.isnumber", [\
+        ["npm:3.0.3", {\
+          "packageLocation": "./.yarn/cache/lodash.isnumber-npm-3.0.3-b3bb5f7347-913784275b.zip/node_modules/lodash.isnumber/",\
+          "packageDependencies": [\
+            ["lodash.isnumber", "npm:3.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.isplainobject", [\
+        ["npm:4.0.6", {\
+          "packageLocation": "./.yarn/cache/lodash.isplainobject-npm-4.0.6-d73937742f-29c6351f28.zip/node_modules/lodash.isplainobject/",\
+          "packageDependencies": [\
+            ["lodash.isplainobject", "npm:4.0.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.isstring", [\
+        ["npm:4.0.1", {\
+          "packageLocation": "./.yarn/cache/lodash.isstring-npm-4.0.1-721fee791c-eaac87ae96.zip/node_modules/lodash.isstring/",\
+          "packageDependencies": [\
+            ["lodash.isstring", "npm:4.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.once", [\
+        ["npm:4.1.1", {\
+          "packageLocation": "./.yarn/cache/lodash.once-npm-4.1.1-d8ba329ead-d768fa9f9b.zip/node_modules/lodash.once/",\
+          "packageDependencies": [\
+            ["lodash.once", "npm:4.1.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -683,33 +773,41 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["mongodb", [\
-        ["npm:5.3.0", {\
-          "packageLocation": "./.yarn/cache/mongodb-npm-5.3.0-2ac8ac2fcd-da86069555.zip/node_modules/mongodb/",\
+        ["npm:5.9.0", {\
+          "packageLocation": "./.yarn/cache/mongodb-npm-5.9.0-e0f7c8bf46-5fb828d650.zip/node_modules/mongodb/",\
           "packageDependencies": [\
-            ["mongodb", "npm:5.3.0"]\
+            ["mongodb", "npm:5.9.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:6485463207d8910dd444eafe2094acac503cf6a3f42627819771f309e667cd2267e3965b3e9fca622b0a037daae81536f6d8245b291b93cf6efbde908007d6b3#npm:5.3.0", {\
-          "packageLocation": "./.yarn/__virtual__/mongodb-virtual-257e87de79/0/cache/mongodb-npm-5.3.0-2ac8ac2fcd-da86069555.zip/node_modules/mongodb/",\
+        ["virtual:a9c403c4b847aad5019967e82cc2fb3d37b240c38efd9ec8bea87cf880a2a4f98c53c8322c346a214ab4b8cdb89640a4f6d79dfb6d96e4beeedb1c0fa18ab3b4#npm:5.9.0", {\
+          "packageLocation": "./.yarn/__virtual__/mongodb-virtual-37789f08c8/0/cache/mongodb-npm-5.9.0-e0f7c8bf46-5fb828d650.zip/node_modules/mongodb/",\
           "packageDependencies": [\
-            ["mongodb", "virtual:6485463207d8910dd444eafe2094acac503cf6a3f42627819771f309e667cd2267e3965b3e9fca622b0a037daae81536f6d8245b291b93cf6efbde908007d6b3#npm:5.3.0"],\
+            ["mongodb", "virtual:a9c403c4b847aad5019967e82cc2fb3d37b240c38efd9ec8bea87cf880a2a4f98c53c8322c346a214ab4b8cdb89640a4f6d79dfb6d96e4beeedb1c0fa18ab3b4#npm:5.9.0"],\
             ["@aws-sdk/credential-providers", null],\
+            ["@mongodb-js/saslprep", "npm:1.1.0"],\
+            ["@mongodb-js/zstd", null],\
             ["@types/aws-sdk__credential-providers", null],\
+            ["@types/kerberos", null],\
             ["@types/mongodb-client-encryption", null],\
+            ["@types/mongodb-js__zstd", null],\
             ["@types/snappy", null],\
-            ["bson", "npm:5.3.0"],\
+            ["bson", "npm:5.5.0"],\
+            ["kerberos", null],\
             ["mongodb-client-encryption", null],\
             ["mongodb-connection-string-url", "npm:2.6.0"],\
-            ["saslprep", "npm:1.0.3"],\
             ["snappy", null],\
             ["socks", "npm:2.7.1"]\
           ],\
           "packagePeers": [\
             "@aws-sdk/credential-providers",\
+            "@mongodb-js/zstd",\
             "@types/aws-sdk__credential-providers",\
+            "@types/kerberos",\
             "@types/mongodb-client-encryption",\
+            "@types/mongodb-js__zstd",\
             "@types/snappy",\
+            "kerberos",\
             "mongodb-client-encryption",\
             "snappy"\
           ],\
@@ -728,13 +826,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["mongoose", [\
-        ["npm:7.1.1", {\
-          "packageLocation": "./.yarn/cache/mongoose-npm-7.1.1-6485463207-bbacd407cd.zip/node_modules/mongoose/",\
+        ["npm:7.6.3", {\
+          "packageLocation": "./.yarn/cache/mongoose-npm-7.6.3-a9c403c4b8-16d097d6a4.zip/node_modules/mongoose/",\
           "packageDependencies": [\
-            ["mongoose", "npm:7.1.1"],\
-            ["bson", "npm:5.3.0"],\
+            ["mongoose", "npm:7.6.3"],\
+            ["bson", "npm:5.5.0"],\
             ["kareem", "npm:2.5.1"],\
-            ["mongodb", "virtual:6485463207d8910dd444eafe2094acac503cf6a3f42627819771f309e667cd2267e3965b3e9fca622b0a037daae81536f6d8245b291b93cf6efbde908007d6b3#npm:5.3.0"],\
+            ["mongodb", "virtual:a9c403c4b847aad5019967e82cc2fb3d37b240c38efd9ec8bea87cf880a2a4f98c53c8322c346a214ab4b8cdb89640a4f6d79dfb6d96e4beeedb1c0fa18ab3b4#npm:5.9.0"],\
             ["mpath", "npm:0.9.0"],\
             ["mquery", "npm:5.0.0"],\
             ["ms", "npm:2.1.3"],\
@@ -984,16 +1082,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["saslprep", [\
-        ["npm:1.0.3", {\
-          "packageLocation": "./.yarn/cache/saslprep-npm-1.0.3-8db649c346-4fdc0b70fb.zip/node_modules/saslprep/",\
-          "packageDependencies": [\
-            ["saslprep", "npm:1.0.3"],\
-            ["sparse-bitfield", "npm:3.0.3"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["scmp", [\
         ["npm:2.1.0", {\
           "packageLocation": "./.yarn/cache/scmp-npm-2.1.0-01d7acfc93-79c59fd218.zip/node_modules/scmp/",\
@@ -1008,6 +1096,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/semver-npm-7.5.1-0736382fb9-d16dbedad5.zip/node_modules/semver/",\
           "packageDependencies": [\
             ["semver", "npm:7.5.1"],\
+            ["lru-cache", "npm:6.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:7.5.4", {\
+          "packageLocation": "./.yarn/cache/semver-npm-7.5.4-c4ad957fcd-12d8ad952f.zip/node_modules/semver/",\
+          "packageDependencies": [\
+            ["semver", "npm:7.5.4"],\
             ["lru-cache", "npm:6.0.0"]\
           ],\
           "linkType": "HARD"\
